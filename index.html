@@ -9,7 +9,15 @@
 </head>
 
 <body>
-
+    <div id="app">
+      {{header}}
+      <input type="text" name="entry" v-model="newEntry" v-on:keyup.enter="addEntry">
+      <div class="items">
+        <div class="item" v-for="entry in todos">
+          {{entry}}
+        </div>
+      </div>
+    </div>
     <script type="text/javascript" src="assets/javascripts/lib/vue.js"></script>
     <script type="text/javascript" src="assets/javascripts/index.js"></script>
 </body>
