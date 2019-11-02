@@ -9,8 +9,11 @@ new Vue({
     addEntry: function(){
       if(this.newEntry){  // if the newEntry is truthy
         this.todos.push(this.newEntry);  // add to array
-        this.newList = "";
-      }
+        this.newEntry = "";
+      }      
+    },
+    removeEntry: function(index){
+      this.todos.splice(index,1);
     }
   }
 })

@@ -13,8 +13,9 @@
       {{header}}
       <input type="text" name="entry" v-model="newEntry" v-on:keyup.enter="addEntry">
       <div class="items">
-        <div class="item" v-for="entry in todos">
+        <div class="item" v-for="(entry, index) in todos">
           {{entry}}
+          <a class="close" v-on:click="removeEntry(index)">X</a>
         </div>
       </div>
     </div>
