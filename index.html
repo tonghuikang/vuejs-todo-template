@@ -12,8 +12,11 @@
     <div id="app">
       {{header}}
       <input type="text" name="entry" v-model="newEntry" v-on:keyup.enter="addEntry">
+      <p>
+        Unfinished entries: {{unfinishedEntries.length}}
+      </p>
       <div class="items">
-        <div class="item" v-for="(entry, index) in todos">
+        <div class="item" v-for="(entry, index) in todos" v-bind:class="{done: entry.isDone}">
           <input type="checkbox" name="isDone" v-model="entry.isDone">
           {{entry.value}}
           <a class="close" v-on:click="removeEntry(index)">X</a>
