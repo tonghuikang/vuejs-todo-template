@@ -8,7 +8,7 @@ new Vue({
   methods: {
     addEntry: function(){
       if(this.newEntry){  // if the newEntry is truthy
-        this.todos.push(this.newEntry);  // add to array
+        this.todos.push({value: this.newEntry, isDone: false});  // add to array
         this.newEntry = "";
       }      
     },
